@@ -1,0 +1,11 @@
+.paperQuote {
+  display: grid;
+  max-width: 750px;
+  margin: auto;
+  padding: 20px;
+}
+
+.refreshButton {
+  margin: 20px !important;
+  grid-row-start: 3;
+}
