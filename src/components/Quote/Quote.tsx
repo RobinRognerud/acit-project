@@ -34,18 +34,22 @@ const Quote: React.FC = () => {
 
   return (
     <div>
-      <Paper className="paperQuote" elevation={6}>
-        <h3> Random generated quote </h3>
-        {quote}
-        <Button
-          className="refreshButton"
-          startIcon={<RefreshOutlined />}
-          variant="contained"
-          onClick={() => fetchQuotes()}
-        >
-          Refresh quote
-        </Button>
-      </Paper>
+      {process.env.REACT_APP_FLAGS !== "3" ? (
+        <Paper className="paperQuote" elevation={6}>
+          <h3> Random generated quote </h3>
+          {quote}
+          <Button
+            className="refreshButton"
+            startIcon={<RefreshOutlined />}
+            variant="contained"
+            onClick={() => fetchQuotes()}
+          >
+            Refresh quote
+          </Button>
+        </Paper>
+      ) : (
+        <p>error</p>
+      )}
     </div>
   );
 };
